@@ -104,6 +104,11 @@ class ZammadAPI:
         return Role(connection=self)
 
     @property
+    def text_module(self) -> "TextModule":
+        """Return a `TextModule` instance"""
+        return TextModule(connection=self)
+        
+    @property
     def ticket(self) -> "Ticket":
         """Return a `Ticket` instance"""
         return Ticket(connection=self)
@@ -306,6 +311,10 @@ class Role(Resource):
 
 class Organization(Resource):
     path_attribute = "organizations"
+
+
+class TextModule(Resource):
+    path_attribute = "text_modules"
 
 
 class Ticket(Resource):
